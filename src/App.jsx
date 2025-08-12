@@ -4,6 +4,8 @@ import './App.css'
 
 import Home from './pages/Home.jsx'
 import Detail from './pages/Detail.jsx'
+import lightIcon from './assets/light-mode.svg'
+import darkIcon from './assets/dark-mode.svg'
 
 function App() {
   const prefersDark = useMemo(
@@ -27,7 +29,13 @@ function App() {
             aria-label="Toggle color theme"
             onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
           >
-            {theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+            <img
+              className="theme-icon"
+              src={theme === 'dark' ? lightIcon : darkIcon}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="theme-label">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
           </button>
         </div>
       </header>

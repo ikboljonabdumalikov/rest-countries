@@ -47,7 +47,7 @@ export default function Detail() {
 
   return (
     <div className="detail">
-      <button className="back" onClick={() => navigate(-1)}>&larr; Back</button>
+      <button className="back" onClick={() => navigate(-1)}><span>&larr;</span> Back</button>
 
       <div className="detail-layout">
         <img className="detail-flag" src={country.flags?.svg || country.flag} alt={`Flag of ${country.name}`} />
